@@ -1,0 +1,19 @@
+:root {
+    --main-pink:#e4bcbc;
+
+    /* TASK 2*/
+    --bird_body_color_white: rgb(240, 228, 228);
+    --bird_body_color_blue: rgba(75,188,207,1);
+    --bird_body_hand:#1c8da1;
+    --bird_body_border: #479fbd solid;
+
+    --bird_body_nose: #0867a3;
+    
+    --bird_color: #0867a3;
+
+      /* TASK 4*/
+    --class_1_color: #fdb78f;
+    --class_2_color: #f3a5e2;
+    --btn_border: #fbadc6;
+    --btn: #ffcfaf; 
+  }

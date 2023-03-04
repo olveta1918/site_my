@@ -1,0 +1,775 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a
+{
+    text-decoration: none;
+}
+ul,
+ol,
+li{
+    list-style: none;
+}
+
+img{
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html, 
+body {
+    height: 100%;
+    line-height: 1;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+    font-family: Baskerville;
+}
+
+
+.wrapper
+{
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.container
+{
+    max-width: 1180px;
+    padding: 0 15px;
+    margin: 0px auto;
+}
+
+.first_a
+{
+    position: relative;
+	height:100vh;
+	width: 100%;
+	background: url(/img/fon.png) 0px 0px no-repeat;
+	background-size: cover;
+}
+
+.first_a:before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color:#85461e;
+    opacity: .67;
+}
+
+
+.header
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+.header::before
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #85461e;
+    opacity: 0.4;
+
+}
+
+.header__body
+{
+    position: relative ;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    height: 130px;
+    align-items: center;
+}
+
+.header_list
+{
+    display: flex;
+}
+
+.header_list li
+{
+    list-style: none;
+    margin: 0px 0px 0px 20px;
+}
+
+.header__link
+{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
+
+
+
+.cup_log
+{
+   width: 100%; 
+   height: 130px;
+   margin-left: 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.container_log
+{
+    position: relative;
+    top: 0;   
+}
+
+.cup
+{
+    position: relative;
+    min-width: 52px;
+    height: 54px;
+    background: linear-gradient(to right, #e4bcbc, #d5b2b2);
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+    caret-color: transparent;
+
+}
+
+.top
+{
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to right, #e4bcbc, #d5b2b2);
+    border-radius: 50%;
+}
+
+.circle
+{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 50%;
+    background: linear-gradient(to left, #e4bcbc, #d5b2b2);
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.coffee
+{
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#dca269, #e7ceb4);
+    border-radius: 50%;
+}
+
+.handle
+{
+    position: absolute;
+    right: -15px;
+    top: 0px;
+    width: 30px;
+    height: 35px;
+    border: 8px solid #d5b2b2;
+    border-left: 8px transparent;
+    border-bottom: 8px transparent;
+    border-radius: 50%;
+    transform: rotate(42deg);
+
+}
+
+.plate
+{
+    position: absolute;
+    top:  27px;
+    left: 27px;
+    transform: translateX(-50%);
+    min-width: 90px;
+    height: 50px;
+    background: linear-gradient(to right,  #e4bcbc, #d5b2b2);
+    border-radius: 50%;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 2);
+}
+
+.plate::before
+{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    background: linear-gradient(to left,  #e4bcbc, #d5b2b2);   
+}
+
+.plate::after
+{
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    background: radial-gradient(rgba(0, 0, 0, 0.2) 25%, transparent, transparent);
+    border-radius: 50%;
+}
+
+.vapour
+{
+    position: relative;
+    display: flex;
+    z-index: 1;
+    padding: 0 5px;
+}
+
+.vapour span
+{
+    position: relative;
+    bottom: 50px;
+    display: block;
+    margin: 0 10px 2px 0;
+    min-width: 5px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    animation: animate 5s linear infinite;
+    opacity: 0;
+    filter: blur(8px);
+    animation-delay: calc(var(--i) * -0.5s);
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        transform: translateY(-50px) scaleX(5);
+    }
+    95%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translateY(-100px) scaleX(10);
+    }
+}
+
+.main
+{
+   padding: 10px 0px 0px 0px;
+}
+
+.main_text
+{
+    color: #000;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.bird
+{
+    width:200px;
+    height: 200px;
+    display: block;
+    background-color: var(--main-pink);
+    position: relative;
+    margin: 30px auto;
+    z-index: 0;
+    caret-color: transparent;
+
+}
+
+.bird_body
+{
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    width: 50%;
+    height: 70%;
+    border: var(--bird_body_border);
+    background: radial-gradient(circle at 50% 60%, var(--bird_body_color_white) 6%, var(--bird_body_color_blue) 40%);
+    border-radius: 70%; 
+
+}
+
+.bird_eyes
+{   
+    position: relative;
+    
+    margin: 12% 55%;
+    width: 20%;
+    height: 19%;
+}
+
+.bird_eyes::before,
+.bird_eyes::after
+{
+    content: '';
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    border: var(--bird_body_border);
+    border-radius: 70%;
+    z-index: 1;
+}
+
+.bird_eyes::after
+{
+    left: -140%;
+}
+
+.bird_pupil::before,
+.bird_pupil::after
+{
+    content: '';
+    top: 10%; left: 4%; bottom: 0; right: 0;
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    background-color: var(--bird_color);
+    border-radius: 60%;
+
+    z-index: 2;
+}
+
+.bird_pupil::before
+{
+    left: -140%;
+}
+
+.bird_nose{ 
+    display: block;
+    position: absolute;
+    margin: -2px 42%;
+    width: 14%;
+    height: 10%;
+    border-style: solid;
+    border-width: 18px 7px 0 7px;
+    border-color: var(--bird_body_nose) transparent transparent transparent;
+    transform: rotate(0deg);
+}
+
+.bird_hand
+{
+    position: relative;
+    margin: -5% 0%;
+    width: 60%;
+    height: 60%;
+}
+
+
+.bird_hand::before,
+.bird_hand::after
+{
+    content: '';
+    top: 0; left: 0; bottom: 0; right: 0;
+    position: absolute;
+    width: 45%;
+    height: 90%;
+    border: var(--bird_body_border);
+    background: radial-gradient(circle at 50% 76%, var(--bird_body_color_white) 6%, var(--bird_body_hand) 40%);
+    border-radius: 60%;
+    z-index: -1;
+}
+
+.bird_hand::before
+{
+    left: -21%;
+    transform: rotate(25deg);
+
+}
+.bird_hand::after
+{
+    left:145%;
+    transform: rotate(-25deg);
+}
+
+.bird_legs
+{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    height: 40%;
+    z-index: -1;
+}
+.bird_one_leg
+{
+    display: block;
+    position: absolute;
+    top:10%; left: 24%;
+    border-left: 3px solid var(--bird_body_hand);
+    height: 28%;
+    z-index: -1;
+    transform: rotate(15deg);
+}
+
+.bird_one_toe
+{
+    display: block;
+    position: relative;
+    top:0; right:0; bottom: 0;  right: 0;
+    width: 100%;
+    height: 40%;
+}
+
+.bird_one_toe::before,
+.bird_one_toe::after
+{
+    display: block;
+    position: absolute;
+    content: '';
+    top:18px; right:0; bottom: 0;  right: 0;
+    border-left:3px solid var(--bird_body_hand);
+    height: 40%;
+    z-index: 4;
+}
+
+.bird_one_toe::before
+{
+    display: block;
+    right:73%;
+    transform: rotate(140deg);
+}
+
+.bird_one_toe::after
+{
+    display: block;
+    transform: rotate(220deg);
+    right:78.5%;
+}
+
+.bird_one_toe span
+{
+    display: block;
+    position: absolute;
+    bottom:-21%; left:21.5%;
+    border-left: 3px solid var(--bird_body_hand);
+    height: 26%;
+    z-index: -1;
+}
+
+.bird_two_leg
+{
+    display: block;
+    position: absolute;
+    top:10%; right: 27%;
+    border-left: 3px solid var(--bird_body_hand);
+    height: 28%;
+    z-index: -1;
+    transform: rotate(15deg);
+}
+
+.bird_two_toe
+{
+    display: block;
+    position: relative;
+    top:-7%; right:0; bottom: 0;  right: 0;
+    width: 100%;
+    height: 40%;
+}
+
+.bird_two_toe::before,
+.bird_two_toe::after
+{
+    display: block;
+    position: absolute;
+    content: '';
+    top:0; bottom:0 ;  right: 0;
+    border-left:3px solid var(--bird_body_hand);
+    height: 40%;
+    z-index: 4;
+}
+
+.bird_two_toe::before
+{
+    display: block;
+    right:26%;
+    transform: rotate(140deg);
+}
+
+.bird_two_toe::after
+{
+    display: block;
+    transform: rotate(220deg);
+    right:32%;
+}
+
+.bird_two_toe span
+{
+    display: block;
+    position: absolute;
+    top:13%; right:29%;
+    border-left: 3px solid var(--bird_body_hand);
+    height: 26%;
+    z-index: -1;
+}
+
+
+.bird_hair
+{
+    position: absolute;
+    display: block;
+    top: -6.5%;
+    left: 40%;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid var(--bird_body_nose);
+    border-left: 5px solid transparent;
+    z-index: -2;
+}
+
+.bird_hair::before,
+.bird_hair::after
+{
+    content: '';
+    position: absolute;
+    border-left: 5px solid transparent;
+    z-index: -1;
+}
+
+
+.bird_hair::after
+{
+    left: 10px;
+    border-bottom: 10px solid var(--bird_body_nose);
+
+}
+
+.bird_hair::before
+{
+    left:3px;
+    top:-2px;
+    border-bottom: 12px solid var(--bird_body_nose);
+}
+
+.shooting_block
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    position: relative;
+    caret-color: transparent;
+
+}
+
+.block-animation {
+    background: url(../img/gun6.png);
+    background-size: 100%;
+    display: block;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.block-animation:hover {
+    transform: rotate(0deg);
+}
+
+.bullet
+{
+    background: url(../img/gun5.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 23px;
+    left: 10px;
+    opacity: 0;
+    will-change: transform, opacity;
+
+}
+
+.block-animation:active {
+    background: url(../img/gun3.png);
+    background-size: 100%;
+    animation: shake 1s infinite;
+}
+
+.bullet:active
+{
+    cursor: none;
+    opacity: 100%;
+    animation: fly 3s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes fly {
+    0%{
+        
+        left: 10px;
+    }
+
+    100% {
+        left: 250px;
+     }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateY(5px)
+    }
+
+    25% {
+        transform: translateY(-5px)
+    }
+
+    50% {
+        transform: translateY(5px)
+    }
+
+    75% {
+        transform: translateY(-5px)
+    }
+
+    100% {
+        transform: translateY(5px)
+    }
+}
+
+
+.class1 {
+    background-color: var(--class_1_color);
+}
+
+.class2 {
+    background-color: var(--class_2_color);
+}
+
+.task_4
+{
+    margin:50px 0 ;
+}
+
+.btn {
+
+    border: none;
+    padding: 10px 32px;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 4px solid var(--btn_border);
+    border-radius: 12px;
+    background-color: var(--btn);
+    margin: 8px 0;
+  }
+
+  .btn:hover {
+    transform: skew(-10deg);
+  }
+  
+  #rand p {
+    font-weight: normal;
+    margin: 10px;
+ }
+  #rand p u {
+    margin: 10px;
+ }
+  #rand p i {
+    margin: 20px;
+ }
+
+ .home {
+    height: 300px;
+}
+
+.elem {
+    position: absolute;
+}
+
+
+#roof {
+    background-color: red;
+    height: 93.3px;
+    width: 200px;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    border: crimson solid 6.7px;
+}
+
+#wall {
+    background-color: saddlebrown;
+    border: 6.7px solid rgb(84, 36, 2);
+    height: 160px;
+    width: 160px;
+}
+
+#window {
+    height: 66.6px;
+    width: 66.6px;
+    background-color: lightblue;
+    border: 4px groove rgba(0, 94, 255, 0.467);
+}
+
+#pipe {
+    height: 55px;
+    width: 20px;
+    background-color: black;
+    border: 4px solid rgb(65, 63, 63);
+}
+
+footer
+{
+    color: #85461e;
+    background-color: #e7ceb4;
+    text-align: center;
+    width: 100%;
+    padding: 2%;
+    font-weight: 300;
+}
+
